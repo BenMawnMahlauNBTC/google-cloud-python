@@ -650,6 +650,8 @@ class SearchTextResponse(proto.Message):
             non-contextual content. It will be empty only when the
             content is unavailable for this place. This list will have
             as many entries as the list of places if requested.
+        next_page_token (str):
+            the next page token
     """
 
     places: MutableSequence[gmp_place.Place] = proto.RepeatedField(
@@ -671,7 +673,7 @@ class SearchTextResponse(proto.Message):
         number=3,
         message=contextual_content.ContextualContent,
     )
-
+    next_page_token: str = proto.Field(proto.STRING, number=4)
 
 class GetPhotoMediaRequest(proto.Message):
     r"""Request for fetching a photo of a place using a photo
